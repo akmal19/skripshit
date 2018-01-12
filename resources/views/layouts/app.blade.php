@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}">
 </head>
 <body>
     <div id="app">
@@ -37,6 +38,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-left">
+                        <!-- Authentication Links -->
+                        @if (!Auth::guest())
+                            <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
+                            <li><a href="{{ route('pengajuan') }}">Pengajuan</a></li>
+                            <li><a href="{{ route('pengajuan') }}">Peminjaman</a></li>
+                            {{-- <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fasilitas <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('fasilitas') }}">Peralatan ruangan dan Lab.</a></li>
+                                    <li><a href="#">Komputer dan alat bengkel</a></li>
+                                </ul>
+                            </li> --}}
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
