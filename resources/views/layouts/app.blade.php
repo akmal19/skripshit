@@ -43,19 +43,42 @@
                     <ul class="nav navbar-nav navbar-left">
                         <!-- Authentication Links -->
                         @if (!Auth::guest())
-                            <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
-                            <li><a href="{{ route('pengajuan') }}">Pengajuan</a></li>
-                            <li><a href="{{ route('peminjaman') }}">Peminjaman</a></li>
-                            <li><a href="{{ route('inventaris') }}">Inventaris</a></li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Data Kelas</a></li>
+                                  <li><a href="#">Exit Program</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master Setting <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="#">Set Tahun Akademik</a></li>
+                                  <li><a href="#">Set Kategori Fasilitas</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cek Data <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="{{ route('fasilitas.create') }}">Input Fasilitas Ruangan dan Lab</a></li>
+                                  <li><a href="{{ route('fasilitas.create') }}">Input Fasilitas bengkel</a></li>
+                                  <li><a href="{{ route('pengajuan.create') }}">Input pengajuan barang</a></li>
+                                  <li><a href="{{ route('peminjaman.create') }}">Input peminjaman barang</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="{{ route('pengajuan') }}">Data pengajuan fasilitas</a></li>
+                                  <li><a href="#">Data pengajuan fasilitas yang disetujui</a></li>
+                                  <li><a href="{{ route('peminjaman') }}">Data peminjaman barang</a></li>
+                                  <li><a href="#">Laporan berita acara</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="#">Help</a></li>
                             <li><a href="{{ route('manage.pengajuan') }}">Manajemen Pengajuan</a></li>
                             {{-- <li><a href="{{ route('manage.peminjaman') }}">Manajemen Peminjaman</a></li> --}}
-                            {{-- <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fasilitas <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ route('fasilitas') }}">Peralatan ruangan dan Lab.</a></li>
-                                    <li><a href="#">Komputer dan alat bengkel</a></li>
-                                </ul>
-                            </li> --}}
+
                         @endif
                     </ul>
 
