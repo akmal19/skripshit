@@ -11,6 +11,7 @@ class Pengajuan extends Model
     protected $fillable = [
         'kategori',
         'type',
+        'kode',
         'barang',
         'brand',
         'kuantitas',

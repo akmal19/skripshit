@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Fasilitas;
+use App\Models\Pengajuan;
+use App\Models\Peminjaman;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $fasilitas = Fasilitas::all()->count();
+        $pengajuan = Pengajuan::all()->count();
+        $peminjaman = Peminjaman::all()->count();
+        return view('home', ['fasilitas' => $fasilitas, 'pengajuan' => $pengajuan, 'peminjaman' => $peminjaman]);
     }
 }

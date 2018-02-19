@@ -10,6 +10,7 @@ class Peminjaman extends Model
 
     protected $fillable = [
         'kategori',
+        'kode',
         'nama',
         'id_guru',
         'barang',

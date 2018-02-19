@@ -21,6 +21,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="kode">Kode Barang</label>
+                                <input type="text" name="kode" class="form-control" id="kode" placeholder="Kode Barang">
+                            </div>
+                            <div class="form-group">
                                 <label for="barang">Nama Barang</label>
                                 <input type="text" name="barang" class="form-control" id="barang" placeholder="Nama barang">
                             </div>

@@ -18,6 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', function () {
+        return redirect()->route('home');
+    });
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/fasilitas', 'FasilitasController@index')->name('fasilitas');

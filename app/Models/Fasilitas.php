@@ -10,6 +10,7 @@ class Fasilitas extends Model
 
     protected $fillable = [
         'kategori',
+        'kode',
         'barang',
         'brand',
         'type',

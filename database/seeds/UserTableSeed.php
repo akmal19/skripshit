@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+
 class UserTableSeed extends Seeder
 {
     /**
@@ -11,11 +12,38 @@ class UserTableSeed extends Seeder
      */
     public function run()
     {
-        DB::table('users')->delete();
-    		User::create(array(
-    			'name'     => 'Admiinistrator',
-    			'email'    => 'admin@skripsi',
-    			'password' => Hash::make('admin'),
-    		));
+        DB::table('users')->truncate();
+
+    		$arg1 = [
+          [
+      			'name'     => 'Administrator',
+      			'email'    => 'admin@skripsi',
+      			'password' => Hash::make('admin'),
+      		],
+          [
+      			'name'     => 'Penanggung Jawab Ruangan dan Lab',
+      			'email'    => 'admin@lab',
+      			'password' => Hash::make('admin'),
+      		],
+          [
+      			'name'     => 'Pendataan dan Pengadaan Fasiltas',
+      			'email'    => 'admin@data',
+      			'password' => Hash::make('admin'),
+      		],
+          [
+      			'name'     => 'Keuangan',
+      			'email'    => 'admin@keuangan',
+      			'password' => Hash::make('admin'),
+      		],
+          [
+      			'name'     => 'Koordinator Ruangan dan Lab',
+      			'email'    => 'admin@koordinator',
+      			'password' => Hash::make('admin'),
+      		]
+        ];
+
+        foreach($arg1 as $data) {
+          User::create($data);
+        }
     }
 }

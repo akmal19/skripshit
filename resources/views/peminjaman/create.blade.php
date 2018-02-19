@@ -25,6 +25,10 @@
                                 <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Peminjam">
                             </div>
                             <div class="form-group">
+                                <label for="kode">Kode Barang</label>
+                                <input type="text" name="kode" class="form-control" id="kode" placeholder="Kode Barang">
+                            </div>
+                            <div class="form-group">
                                 <label for="barang">Nama Barang</label>
                                 <input type="text" name="barang" class="form-control" id="barang" placeholder="Nama Barang">
                             </div>
@@ -34,7 +38,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="lama_pinjaman">Lama Pinjaman</label>
-                                <input type="text" name="lama_pinjaman" class="form-control" id="lama_pinjaman" placeholder="Lama Pinjaman">
+                                <div class="input-group">
+                                  <input type="text" name="lama_pinjaman" class="form-control" id="lama_pinjaman" placeholder="Lama Pinjaman">
+                                  <div class="input-group-addon">Hari</div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="keperluan_pinjaman">Keperluan Peminjaman</label>
