@@ -70,7 +70,7 @@
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transaksi <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                   <li><a href="{{ route('pengajuan') }}">Data pengajuan fasilitas</a></li>
-                                  <li><a href="#">Data pengajuan fasilitas yang disetujui</a></li>
+                                  <li><a href="{{ route('fasilitas') }}">Data fasilitas</a></li>
                                   <li><a href="{{ route('peminjaman') }}">Data peminjaman barang</a></li>
                                   <li><a href="#">Laporan berita acara</a></li>
                               </ul>
