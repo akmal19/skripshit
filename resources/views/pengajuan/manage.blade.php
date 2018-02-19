@@ -30,7 +30,6 @@
                                             <th rowspan="2">Brand</th>
                                             <th rowspan="2">Jumlah</th>
                                             <th colspan="2" class="text-center">Harga</th>
-                                            <th rowspan="2" class="text-center">Status</th>
                                             <th rowspan="2" class="text-center">Action</th>
                                         </tr>
                                         <tr>
@@ -49,20 +48,24 @@
                                                     <td>{{ $pengajuan->kuantitas }}</td>
                                                     <td>{{ $pengajuan->satuan_harga }}</td>
                                                     <td>{{ $pengajuan->satuan_harga * $pengajuan->kuantitas }}</td>
-                                                    <td class="text-center">{{ $pengajuan->status }}</td>
                                                     <td class="text-center">
-                                                        <form action="{{ route('post.re.pengajuan') }}" method="post">
-                                                          <div class="form-group">
-                                                            {{ csrf_field() }}
-                                                            <input type="hidden" name="id" value="{{$pengajuan->id}}">
-                                                            <input type="hidden" name="approval" value="PENDING">
-                                                            @if ($pengajuan->status == "PENDING")
-                                                                Sedang proses
-                                                            @else
-                                                                <a class="btn btn-link" href="{{ route('edit.pengajuan', ['id' => $pengajuan->id]) }}">Edit</a><button class="btn btn-success" type="submit" name="submit">Ajukan</button>
-                                                            @endif
-                                                          </div>
-                                                        </form>
+                                                      <form action="{{ route('post.manage.pengajuan') }}" method="post">
+                                                        <div class="form-group">
+                                                          {{ csrf_field() }}
+                                                          <input type="hidden" name="id" value="{{$pengajuan->id}}">
+                                                          <input type="hidden" name="approval" value="APPROVED">
+                                                          <button class="btn btn-success" type="submit" name="submit">Approve</button>
+                                                        </div>
+                                                      </form>
+
+                                                      <form action="{{ route('post.manage.pengajuan') }}" method="post">
+                                                        <div class="form-group">
+                                                          {{ csrf_field() }}
+                                                          <input type="hidden" name="id" value="{{$pengajuan->id}}">
+                                                          <input type="hidden" name="approval" value="REJECTED">
+                                                          <button class="btn btn-danger" type="submit" name="submit">Reject</button>
+                                                        </div>
+                                                      </form>
                                                     </td>
                                                 </tr>
                                             @endforeach

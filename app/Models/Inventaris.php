@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pengajuan extends Model
+class Inventaris extends Model
 {
-    protected $table = 'pengajuan';
+    protected $table = 'inventaris';
 
     protected $fillable = [
         'kategori',
-        'type',
         'barang',
+        'deskripsi',
+        'type',
         'brand',
         'kuantitas',
-        'satuan_harga',
-        'deskripsi',
-        'status'
+        'layak',
+        'perbaikan',
+        'tidak_layak',
     ];
 }

@@ -7,9 +7,9 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="pull-left">
-                        <h4>Data Master Pengajuan</h4>
+                        <h4>Data Master Peminjaman</h4>
                     </div>
-                    <div class="pull-right"><a href="{{ route("pengajuan.create") }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> Tambah</a></div>
+                    <div class="pull-right"><a href="{{ route("peminjaman.create") }}" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> Tambah</a></div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">
@@ -18,7 +18,7 @@
                     @endif
                     <div class="row">
                         <div class="col-md-6">
-                            <h3 class="panel-title text-center">Pengajuan Pending</h3>
+                            <h3 class="panel-title text-center">peminjaman Pending</h3>
                             <hr>
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped">
@@ -30,7 +30,6 @@
                                             <th rowspan="2">Brand</th>
                                             <th rowspan="2">Jumlah</th>
                                             <th colspan="2" class="text-center">Harga</th>
-                                            <th rowspan="2" class="text-center">Status</th>
                                             <th rowspan="2" class="text-center">Action</th>
                                         </tr>
                                         <tr>
@@ -39,30 +38,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if ($pengajuan_pending)
-                                            @foreach ($pengajuan_pending as $pengajuan)
+                                        @if ($peminjaman_pending)
+                                            @foreach ($peminjaman_pending as $peminjaman)
                                                 <tr>
                                                     <td>{{$loop->iteration}}</td>
-                                                    <td>{{ $pengajuan->kategori }}</td>
-                                                    <td>{{ $pengajuan->barang }}</td>
-                                                    <td>{{ $pengajuan->brand }}</td>
-                                                    <td>{{ $pengajuan->kuantitas }}</td>
-                                                    <td>{{ $pengajuan->satuan_harga }}</td>
-                                                    <td>{{ $pengajuan->satuan_harga * $pengajuan->kuantitas }}</td>
-                                                    <td class="text-center">{{ $pengajuan->status }}</td>
+                                                    <td>{{ $peminjaman->kategori }}</td>
+                                                    <td>{{ $peminjaman->barang }}</td>
+                                                    <td>{{ $peminjaman->brand }}</td>
+                                                    <td>{{ $peminjaman->kuantitas }}</td>
+                                                    <td>{{ $peminjaman->satuan_harga }}</td>
+                                                    <td>{{ $peminjaman->satuan_harga * $peminjaman->kuantitas }}</td>
                                                     <td class="text-center">
-                                                        <form action="{{ route('post.re.pengajuan') }}" method="post">
-                                                          <div class="form-group">
-                                                            {{ csrf_field() }}
-                                                            <input type="hidden" name="id" value="{{$pengajuan->id}}">
-                                                            <input type="hidden" name="approval" value="PENDING">
-                                                            @if ($pengajuan->status == "PENDING")
-                                                                Sedang proses
-                                                            @else
-                                                                <a class="btn btn-link" href="{{ route('edit.pengajuan', ['id' => $pengajuan->id]) }}">Edit</a><button class="btn btn-success" type="submit" name="submit">Ajukan</button>
-                                                            @endif
-                                                          </div>
-                                                        </form>
+                                                      <form action="{{ route('post.manage.peminjaman') }}" method="post">
+                                                        <div class="form-group">
+                                                          {{ csrf_field() }}
+                                                          <input type="hidden" name="id" value="{{$peminjaman->id}}">
+                                                          <input type="hidden" name="approval" value="APPROVED">
+                                                          <button class="btn btn-success" type="submit" name="submit">Approve</button>
+                                                        </div>
+                                                      </form>
+
+                                                      <form action="{{ route('post.manage.peminjaman') }}" method="post">
+                                                        <div class="form-group">
+                                                          {{ csrf_field() }}
+                                                          <input type="hidden" name="id" value="{{$peminjaman->id}}">
+                                                          <input type="hidden" name="approval" value="REJECTED">
+                                                          <button class="btn btn-danger" type="submit" name="submit">Reject</button>
+                                                        </div>
+                                                      </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -76,7 +79,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="panel-title text-center">Pengajuan Disetujui</h3>
+                            <h3 class="panel-title text-center">peminjaman Disetujui</h3>
                             <hr>
                             <div class="table-responsive">
                                 <table class="table table-hover table-striped">
@@ -95,16 +98,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @if ($pengajuan_approved)
-                                          @foreach ($pengajuan_approved as $pengajuan)
+                                      @if ($peminjaman_approved)
+                                          @foreach ($peminjaman_approved as $peminjaman)
                                               <tr>
                                                   <td>{{$loop->iteration}}</td>
-                                                  <td>{{ $pengajuan->kategori }}</td>
-                                                  <td>{{ $pengajuan->barang }}</td>
-                                                  <td>{{ $pengajuan->brand }}</td>
-                                                  <td>{{ $pengajuan->kuantitas }}</td>
-                                                  <td>{{ $pengajuan->satuan_harga }}</td>
-                                                  <td>{{ $pengajuan->satuan_harga * $pengajuan->kuantitas }}</td>
+                                                  <td>{{ $peminjaman->kategori }}</td>
+                                                  <td>{{ $peminjaman->barang }}</td>
+                                                  <td>{{ $peminjaman->brand }}</td>
+                                                  <td>{{ $peminjaman->kuantitas }}</td>
+                                                  <td>{{ $peminjaman->satuan_harga }}</td>
+                                                  <td>{{ $peminjaman->satuan_harga * $peminjaman->kuantitas }}</td>
                                               </tr>
                                           @endforeach
                                       @else

@@ -11,4 +11,15 @@ class KategoriFasilitas extends Model
     protected $fillable = [
         'kategori',
     ];
+
+    protected function getKategoriPenilaian ()
+    {
+        $kategoris = self::all();
+
+        $kategori = [];
+        foreach($kategoris as $k => $v) {
+            $kategori[$v->kategori] = $v->kategori;
+        }
+        return $kategori;
+    }
 }

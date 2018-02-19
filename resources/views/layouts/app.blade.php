@@ -45,7 +45,10 @@
                         @if (!Auth::guest())
                             <li><a href="{{ route('fasilitas') }}">Fasilitas</a></li>
                             <li><a href="{{ route('pengajuan') }}">Pengajuan</a></li>
-                            <li><a href="{{ route('pengajuan') }}">Peminjaman</a></li>
+                            <li><a href="{{ route('peminjaman') }}">Peminjaman</a></li>
+                            <li><a href="{{ route('inventaris') }}">Inventaris</a></li>
+                            <li><a href="{{ route('manage.pengajuan') }}">Manajemen Pengajuan</a></li>
+                            {{-- <li><a href="{{ route('manage.peminjaman') }}">Manajemen Peminjaman</a></li> --}}
                             {{-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fasilitas <span class="caret"></span></a>
                                 <ul class="dropdown-menu">

@@ -26,6 +26,6 @@ class FasilitasController extends Controller
         $input = $request->all();
 
         $fasilitas = Fasilitas::create($input);
-        return redirect()->back()->with('message', 'Berhasil disimpan');
+        return redirect()->route('fasilitas')->with('message', 'Berhasil disimpan');
     }
 }

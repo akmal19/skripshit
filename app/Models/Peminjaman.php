@@ -4,18 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pengajuan extends Model
+class Peminjaman extends Model
 {
-    protected $table = 'pengajuan';
+    protected $table = 'peminjaman';
 
     protected $fillable = [
         'kategori',
-        'type',
+        'nama',
+        'id_guru',
         'barang',
-        'brand',
         'kuantitas',
-        'satuan_harga',
-        'deskripsi',
-        'status'
+        'lama_pinjaman',
+        'keperluan_pinjaman'
     ];
 }

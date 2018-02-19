@@ -31,18 +31,19 @@ class CreateMasterTable extends Migration
             $table->increments('id');
             $table->string('kategori');
             $table->string('barang');
-            $table->string('type');
-            $table->string('brand');
+            $table->string('type')->nullable();
+            $table->string('brand')->nullable();
             $table->string('kuantitas');
             $table->timestamps();
         });
 
         Schema::create('inventaris', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kategori');
             $table->string('barang');
-            $table->string('deskripsi');
-            $table->string('brand');
-            $table->string('type');
+            $table->string('deskripsi')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('type')->nullable();
             $table->string('kuantitas');
             $table->string('layak');
             $table->string('perbaikan');
@@ -50,10 +51,11 @@ class CreateMasterTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('pinjaman', function (Blueprint $table) {
+        Schema::create('peminjaman', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->string('id_guru');
+            $table->string('kategori');
+            $table->string('id_guru')->nullable();
             $table->string('barang');
             $table->string('kuantitas');
             $table->string('lama_pinjaman');
@@ -63,12 +65,14 @@ class CreateMasterTable extends Migration
 
         Schema::create('pengajuan', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kategori');
             $table->string('barang');
-            $table->string('deskripsi');
-            $table->string('brand');
-            $table->string('type');
+            $table->string('deskripsi')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('type')->nullable();
             $table->string('kuantitas');
             $table->string('satuan_harga');
+            $table->string('status');
             $table->timestamps();
         });
 
@@ -89,9 +93,10 @@ class CreateMasterTable extends Migration
 
         Schema::create('berita_acara', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kategori');
             $table->string('nama');
             $table->string('barang');
-            $table->string('brand');
+            $table->string('brand')->nullable();
             $table->string('jumlah');
             $table->string('harga');
             $table->string('tgl_pengajuan');
@@ -110,7 +115,7 @@ class CreateMasterTable extends Migration
         Schema::drop('inventaris');
         Schema::drop('kategori_fasilitas');
         Schema::drop('fasilitas');
-        Schema::drop('pinjaman');
+        Schema::drop('peminjaman');
         Schema::drop('admin');
         Schema::drop('pengajuan');
         Schema::drop('roles');
