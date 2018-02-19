@@ -76,7 +76,7 @@
                               </ul>
                             </li>
                             <li><a href="#">Help</a></li>
-                            @if (\Auth::user()->email == 'admin@keuangan' || \Auth::user()->email == 'admin@koordinator')
+                            @if (\Auth::user()->email == 'admin@keuangan' || \Auth::user()->email == 'admin@koordinator' || \Auth::user()->email == 'admin@skripsi')
                               <li><a href="{{ route('manage.pengajuan') }}">Manajemen Pengajuan</a></li>
                             @endif
                             {{-- <li><a href="{{ route('manage.peminjaman') }}">Manajemen Peminjaman</a></li> --}}
