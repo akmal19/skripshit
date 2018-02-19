@@ -12,10 +12,10 @@ class UserTableSeed extends Seeder
     public function run()
     {
         DB::table('users')->delete();
-		User::create(array(
-			'name'     => 'Admiinistrator',
-			'email'    => 'admin@skripsi',
-			'password' => Hash::make('admin'),
-		));
+    		User::create(array(
+    			'name'     => 'Admiinistrator',
+    			'email'    => 'admin@skripsi',
+    			'password' => Hash::make('admin'),
+    		));
     }
 }
