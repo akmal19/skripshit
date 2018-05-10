@@ -28,4 +28,9 @@ class FasilitasController extends Controller
         $fasilitas = Fasilitas::create($input);
         return redirect()->route('fasilitas')->with('message', 'Berhasil disimpan');
     }
+
+    public function destroy($id) {
+        $fasilitas = Fasilitas::destroy($id);
+        return redirect()->back()->with('message', 'Berhasil dihapus');
+    }
 }

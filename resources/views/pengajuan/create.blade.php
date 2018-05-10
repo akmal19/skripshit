@@ -38,11 +38,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="jumlah">Jumlah</label>
-                                <input type="text" name="kuantitas" class="form-control" id="jumlah" placeholder="Jumlah">
+                                <input type="number" name="kuantitas" class="form-control" id="jumlah" placeholder="Jumlah">
                             </div>
                             <div class="form-group">
                                 <label for="satuan_harga">Harga satuan</label>
-                                <input type="text" name="satuan_harga" class="form-control" id="satuan_harga" placeholder="Harga Satuan">
+                                <input type="number" name="satuan_harga" class="form-control" id="satuan_harga" placeholder="Harga Satuan">
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>

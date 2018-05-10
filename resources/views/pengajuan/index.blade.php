@@ -63,6 +63,11 @@
                                                             @endif
                                                           </div>
                                                         </form>
+                                                        <form action="{{ route('post.pengajuan.destroy', $pengajuan->id) }}" method="post">
+                                                            <input type="hidden" name="_method" value="delete">
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-danger" name="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endforeach

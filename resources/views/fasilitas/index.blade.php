@@ -38,6 +38,13 @@
                                                     <td>{{ $fasilitas->barang }}</td>
                                                     <td>{{ $fasilitas->brand }}</td>
                                                     <td class="text-center">{{ $fasilitas->kuantitas }}</td>
+                                                    <td class="text-center">
+                                                        <form action="{{ route('post.fasilitas.destroy', $fasilitas->id) }}" method="post">
+                                                            <input type="hidden" name="_method" value="delete">
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-danger" name="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         @else
@@ -70,6 +77,13 @@
                                                   <td>{{ $fasilitas->barang }}</td>
                                                   <td>{{ $fasilitas->brand }}</td>
                                                   <td class="text-center">{{ $fasilitas->kuantitas }}</td>
+                                                  <td class="text-center">
+                                                      <form action="{{ route('post.fasilitas.destroy', $fasilitas->id) }}" method="post">
+                                                          <input type="hidden" name="_method" value="delete">
+                                                          {{ csrf_field() }}
+                                                          <button type="submit" class="btn btn-danger" name="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                      </form>
+                                                  </td>
                                               </tr>
                                           @endforeach
                                       @else

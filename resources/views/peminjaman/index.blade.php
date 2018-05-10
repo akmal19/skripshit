@@ -42,6 +42,13 @@
                                                     <td class="text-center">{{ $peminjaman->kuantitas }}</td>
                                                     <td class="text-center">{{ $peminjaman->lama_pinjaman }}</td>
                                                     <td>{{ $peminjaman->keperluan_pinjaman }}</td>
+                                                    <td class="text-center">
+                                                        <form action="{{ route('post.peminjaman.destroy', $peminjaman->id) }}" method="post">
+                                                            <input type="hidden" name="_method" value="delete">
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-danger" name="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         @else

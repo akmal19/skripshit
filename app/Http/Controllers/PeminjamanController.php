@@ -28,4 +28,9 @@ class PeminjamanController extends Controller
 
         return redirect()->route('peminjaman')->with('message', 'Berhasil disimpan');
     }
+
+    public function destroy($id) {
+        $peminjaman = Peminjaman::destroy($id);
+        return redirect()->back()->with('message', 'Berhasil dihapus');
+    }
 }

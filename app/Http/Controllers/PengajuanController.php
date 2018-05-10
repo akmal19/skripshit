@@ -27,7 +27,7 @@ class PengajuanController extends Controller
         $input['status'] = "PENDING";
         $pengajuan = Pengajuan::create($input);
 
-        return redirect()->route('pengajuan')->with('message', 'Berhasil disimpan');
+        return redirect()->back()->with('message', 'Berhasil disimpan');
     }
 
     public function edit ($id)
@@ -55,5 +55,10 @@ class PengajuanController extends Controller
         $pengajuan->save();
 
         return redirect()->back()->with('message', 'Berhasil disimpan');
+    }
+
+    public function destroy($id) {
+        $pengajuan = Pengajuan::destroy($id);
+        return redirect()->back()->with('message', 'Berhasil dihapus');
     }
 }

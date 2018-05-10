@@ -30,11 +30,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="jumlah">Jumlah</label>
-                                <input type="text" name="kuantitas" class="form-control" id="jumlah" placeholder="Jumlah" value="{{ $pengajuan->kuantitas }}">
+                                <input type="number" name="kuantitas" class="form-control" id="jumlah" placeholder="Jumlah" value="{{ $pengajuan->kuantitas }}">
                             </div>
                             <div class="form-group">
                                 <label for="satuan_harga">Harga satuan</label>
-                                <input type="text" name="satuan_harga" class="form-control" id="satuan_harga" placeholder="Harga Satuan" value="{{ $pengajuan->satuan_harga }}">
+                                <input type="number" name="satuan_harga" class="form-control" id="satuan_harga" placeholder="Harga Satuan" value="{{ $pengajuan->satuan_harga }}">
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>

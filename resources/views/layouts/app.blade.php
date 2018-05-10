@@ -46,7 +46,7 @@
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                  <li><a href="#">Data Kelas</a></li>
+                                  <li><a href="{{ route('ruangan') }}">Data Kelas</a></li>
                                   <li><a href="#">Exit Program</a></li>
                               </ul>
                             </li>
